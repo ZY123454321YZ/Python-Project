@@ -215,6 +215,540 @@ my_foods = ['pizza', 'falafel', 'carrot cake']
 friend_foods = my_foods[:];
 print friend_foods;
 
+# 4.5 元组
+'''列表非常适合用于存储在程序运行期间可能变化的数据集。列表是可以修改的，这对处理网
+站的用户列表或游戏中的角色列表至关重要。然而，有时候你需要创建一系列不可修改的元素，
+元组可以满足这种需求。Python将不能修改的值称为不可变的，而不可变的列表被称为元组。'''
+# 4.5.1 定义元组
+'''元组看起来犹如列表，但使用圆括号而不是方括号来标识。定义元组后，就可以使用索引来
+访问其元素，就像访问列表元素一样。'''
+dimensions = (200, 50)
+print dimensions[0],dimensions[1];
+
+# 4.5.2 遍历元组中的所有值
+# 使用 for 循环来遍历元组中的所有值：
+dimensions = (200, 50,100,"apple");
+for dimen in dimensions:
+    print dimen;
+
+# 4.5.3 修改元组变量
+# 虽然不能修改元组的元素，但可以给存储元组的变量赋值。
+dimensions = (200, 50,100,"apple");
+print dimensions;
+dimensions = (666);
+print dimensions;
+
+
+# 5.   if 语句
+cars = ['audi', 'bmw', 'subaru', 'toyota']
+for car in cars:
+    if car == 'bmw':
+        print car.upper();
+    else :
+        print car.lower();
+    
+# 5.2 条件测试
+car = 'Audi'
+print car.lower() == 'audi'
+
+# 5.2.3 检查是否不相等
+requested_topping = 'mushrooms'
+if requested_topping != 'anchovies':
+    print("Hold the anchovies!")
+# 5.2.4 比较数字
+answer = 17
+if answer != 42:
+    print("That is not the correct answer. Please try again!")
+# 5.2.5 检查多个条件
+# 1. 使用 and 检查多个条件
+# 2. 使用 or 检查多个条件
+
+
+# 5.2.6 检查特定值是否包含在列表中
+requested_toppings = ['mushrooms', 'onions', 'pineapple']
+if 'onions'  in requested_toppings:
+    print "ok";
+
+# 5.2.7 检查特定值是否不包含在列表中
+requested_toppings = ['mushrooms', 'onions', 'pineapple']
+if 'onions' not in requested_toppings:
+    print "ok";
+
+# 5.2.8 布尔表达式
+boole = True;
+print boole;
+
+# 5.3  if 语句
+# 5.3.1 简单的 if 语句
+age = 19;
+if age >= 18:
+    print str(age) + " year";
+# 5.3.2  if-else 语句
+age = 19;
+if age >20:
+    print str(age) + " year";
+else:
+    print "hello python";
+# 5.3.3  if-elif-else 结构
+age = 19;
+if age > 20:
+    print "one";
+elif age > 18:
+    print "two";
+elif age > 25:
+    print "three";
+else:
+    print "four";  
+
+
+
+# 5.4 使用 if 语句处理列表
+# 5.4.1 检查特殊元素
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+for requested_topping in requested_toppings:
+    if requested_topping == 'green peppers':
+        print("Sorry, we are out of green peppers right now.")
+    else:
+            print("Adding " + requested_topping + ".")
+print("\nFinished making your pizza!")
+
+# 5.4.2 确定列表不是空的
+requested_toppings = [];
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print("Adding " + requested_topping + ".")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza?")
+# 5.4.3 使用多个列表
+available_toppings = ['mushrooms', 'olives', 'green peppers',
+'pepperoni', 'pineapple', 'extra cheese']
+requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
+for requested_topping in requested_toppings:
+    if requested_topping in available_toppings:
+        print "we have " + requested_topping + ".";
+    else :
+        print "we donot have " + requested_topping + ".";
+
+
+
+# 6.               字 典
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
