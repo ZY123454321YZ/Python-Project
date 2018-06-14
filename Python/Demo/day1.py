@@ -163,25 +163,37 @@ for magician in magicians:
 print("Thank you, everyone. That was a great magic show!")
 
 
+# 4.3 创建数值列表
+# 列表非常适合用于存储数字集合，而Python提供了很多工具，可帮助你高效地处理数字列表。
+# 4.3.1 使用函数 range()
+for value in range(1,10):
+    print(value);
 
+# 4.3.2 使用 range() 创建数字列表
+numbers = list(range(1,15));
+print numbers;
+# 使用函数 range() 时，还可指定步长。例如，下面的代码打印1~10内的偶数：
+numbers = list(range(1,15,2));
+print numbers;
+# 使用函数 range() 几乎能够创建任何需要的数字集
+squares = [];
+for square in range(1,10):
+    squares.append(square ** 2);
+print squares;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 4.3.3 对数字列表执行简单的统计计算
+'''有几个专门用于处理数字列表的Python函数。例如，你可以轻松地找出数字列表的最大值、
+最小值和总和：'''
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print min(digits),max(digits),sum(digits);
+# 4.3.4 列表解析
+'''前面介绍的生成列表 squares 的方式包含三四行代码，而列表解析让你只需编写一行代码就
+能生成这样的列表。列表解析将 for 循环和创建新元素的代码合并成一行，并自动附加新元素。
+面向初学者的书籍并非都会介绍列表解析，这里之所以介绍列表解析，是因为等你开始阅读他人
+编写的代码时，很可能会遇到它们。
+下面的示例使用列表解析创建你在前面看到的平方数列表：'''
+squares = [value ** 2 for value in range(1,15)];
+print squares;
 
 
 
