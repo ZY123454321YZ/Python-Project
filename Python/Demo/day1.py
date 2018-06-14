@@ -195,16 +195,25 @@ print min(digits),max(digits),sum(digits);
 squares = [value ** 2 for value in range(1,15)];
 print squares;
 
+# 4.4 使用列表的一部分    列表的部分元素——Python称之为切片
+# 4.4.1 切片
+'''要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数 range() 一样，Python
+在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引0~3，
+这将输出分别为 0 、 1 和 2 的元素。'''
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print players[1:3];
+# 遍历切片
+# 如果要遍历列表的部分元素，可在 for 循环中使用切片。
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+for play in players[:3]:
+    print play;
 
-
-
-
-
-
-
-
-
-
+# 4.4.3 复制列表
+'''要复制列表，可创建一个包含整个列表的切片，方法是同时省略起始索引和终止索引（ [:] ）。
+这让Python创建一个始于第一个元素，终止于最后一个元素的切片，即复制整个列表。'''
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods[:];
+print friend_foods;
 
 
 
