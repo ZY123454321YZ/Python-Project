@@ -101,3 +101,102 @@ print pop_cycles
 motorcycles = ['honda', 'yamaha', 'suzuki']
 motorcycles.remove("suzuki")
 print motorcycles
+
+# 3.3 组织列表
+# 3.3.1 使用方法 sort() 对列表进行永久性排序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort(cmp=None, key=None, reverse=False);
+print cars;
+cars.sort(reverse=True);
+print cars;
+
+# 3.3.2 使用函数 sorted() 对列表进行临时排序
+'''要保留列表元素原来的排列顺序，同时以特定的顺序呈现它们，可使用函数 sorted() 。函数
+sorted() 让你能够按特定顺序显示列表元素，同时不影响它们在列表中的原始排列顺序。'''
+
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print("Here is the original list:")
+print(cars)
+
+print("Here is the original list:")
+print(sorted(cars))
+
+# 3.3.3 倒着打印列表
+'''要反转列表元素的排列顺序，可使用方法 reverse() 。'''
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars)
+cars.reverse()
+print(cars)
+
+# 3.3.4 确定列表的长度
+# 使用函数 len() 可快速获悉列表的长度。在下面的示例中，列表包含4个元素，因此其长度为4：
+cars = ['bmw', 'audi', 'toyota', 'subaru'];
+changdu = len(cars);
+print changdu;
+
+# 3.4 使用列表时避免索引错误
+'''刚开始使用列表时，经常会遇到一种错误。假设你有一个包含三个元素的列表，却要求获取
+第四个元素：'''
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print(motorcycles[2])
+
+
+# 4.1 遍历整个列表
+# for 循环
+magicians = ['alice', 'david', 'carolina']
+for magic in magicians:
+    print magic;
+
+
+
+# 4.1.2 在 for 循环中执行更多的操作
+# 在 for 循环中，可对每个元素执行任何操作
+magicians = ['alice', 'david', 'carolina']
+for magic in magicians:
+    print magic.title() + "is a trick";
+
+# 4.1.3 在 for 循环结束后执行一些操作
+magicians = ['alice', 'david', 'carolina']
+for magician in magicians:
+    print(magician.title() + ", that was a great trick!")
+    print("I can't wait to see your next trick, " + magician.title() + ".\n")
+print("Thank you, everyone. That was a great magic show!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
