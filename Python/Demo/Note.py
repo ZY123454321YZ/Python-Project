@@ -333,52 +333,109 @@ for requested_topping in requested_toppings:
 
 
 # 6.               字 典
+# 6.1 一个简单的字典  key value 键值对
+alien_0 = {'color': 'green', 'points': 5}
+print alien_0['color'];
+# 6.2 使用字典
+# 6.2.1 访问字典中的值
+alien_0 = {'color': 'green', 'points': 5}
+new_points = alien_0['points']
+print("You just earned " + str(new_points) + " points!")
 
+# 6.2.2 添加键 — 值对
+alien_0 = {'color': 'green', 'points': 5}
+alien_0['x'] = 100;
+print alien_0;
 
+# 6.2.3 先创建一个空字典
+alien_0 = {}
+alien_0['color'] = 'green'
+alien_0['points'] = 5
+print alien_0;
 
+# 6.2.4 修改字典中的值
+alien_0 = {'color': 'green'}
+print("The alien is " + alien_0['color'] + ".")
+alien_0['color'] = 'yellow'
+print("The alien is now " + alien_0['color'] + ".")
 
+# 6.2.5 删除键 — — 值对
+alien_0 = {'color': 'green', 'points': 5}
+print alien_0;
+del alien_0['color'];
+print alien_0;
 
+# 6.2.6 由类似对象组成的字典
+'''字典存储的是一个对象（游戏中的一个外星人）的多种信息，但你也可以
+使用字典来存储众多对象的同一种信息.'''
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+};
+print favorite_languages['jen'];
 
+# 6.3 遍历字典
+# 6.3.1 遍历所有的键 — — 值对
+user_0 = {
+'username': 'efermi',
+'first': 'enrico',
+'last': 'fermi',
+}
+for k,v in user_0.items():
+    print k + ":" + v
+    
+# 6.3.2 遍历字典中的所有键
+user_0 = {
+'username': 'efermi',
+'first': 'enrico',
+'last': 'fermi',
+}
+for k in user_0.keys():
+    print k;
 
+# 6.3.3 按顺序遍历字典中的所有键
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+}
+for name in sorted(favorite_languages.keys()):
+    print name;
 
+# 6.3.4 遍历字典中的所有值
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+}
+for value in favorite_languages.values():
+    print value;
 
+# 6.4 嵌套
+# 有时候，需要将一系列字典存储在列表中，或将列表作为值存储在字典中，这称为嵌套。
+# 你可以在列表中嵌套字典、在字典中嵌套列表甚至在字典中嵌套字典。
+# 6.4.1 字典列表
+alien_0 = {'sex':'man','points':5}
+alien_1 = {'sex':'man','points':5}
+alien_2 = {'sex':'man','points':5}
+aliens = [alien_0,alien_1,alien_2];
+for alien in aliens:
+    print alien;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 6.4.2 在字典中存储列表
+# 存储所点比萨的信息
+pizza = {
+'crust': 'thick',
+'toppings': ['mushrooms', 'extra cheese'],
+}
+for value in pizza.get('toppings'):
+    print value;
+    
+# 6.4.3 在字典中存储字典
 
 
 
