@@ -436,63 +436,130 @@ for value in pizza.get('toppings'):
     print value;
     
 # 6.4.3 在字典中存储字典
+users = {
+    'alien' :{'length' : 7,
+              'weight' : 8
+              },
+    'helln' : {'length' : 9,
+              'weight'  : 10
+              }
+    }
 
+for userkey,uservalue in users.items():
+    fullname = userkey + " length is : " + str(uservalue['length']);
+    print fullname;
 
+# 7.1 函数 input() 的工作原理
+# message = input("really start :");
+# print message;
 
+# 7.1.2 使用 int() 来获取数值输入
+# age = input("How old are you? ")
+# print age;
+# 7.1.4 在 Python 2.7 中获取输入
 
+# 7.2  while 循环简介
+# 7.2.1 使用 while 循环
+# current_number = 1;
+# while current_number <= 5:
+#     print current_number;
+#     current_number += 1;
 
+# 7.2.2 让用户选择何时退出
+# prompt = "\nTell me something, and I will repeat it back to you:"
+# prompt += "\nEnter 'quit' to end the program. "
+# message = "";
+# while message != "quit":
+#     message = input(prompt);
+#     print message;
 
+# 7.2.3 使用标志
+# 7.2.4 使用 break 退出循环
+# prompt = "\nPlease enter the name of a city you have visited:"
+# prompt += "\n(Enter 'quit' when you are finished.) "
 
+# message = "";
+# while True:
+#      message = input(prompt);
+#      if message == 'break':
+#          break;
+#      else:
+#          print 'l love go to ' + message.title();
+    
+# 7.2.5 在循环中使用 continue
+# current_number = 0;
+# while current_number <= 10:
+#     current_number += 1;
+#     if current_number % 2 == 0:
+#         continue;
+#     print "current_number  is :" + str(current_number);
 
+# 7.2.6 避免无限循环
+# 7.3 使用 while 循环来处理列表和字典
+# 7.3.1 在列表之间移动元素
+'''假设有一个列表，其中包含新注册但还未验证的网站用户；验证这些用户后，如何将他们移
+到另一个已验证用户列表中呢？一种办法是使用一个 while 循环，在验证用户的同时将其从未验
+证用户列表中提取出来，再将其加入到另一个已验证用户列表中。'''
+# 首先，创建一个待验证用户列表
+# 和一个用于存储已验证用户的空列表
+unconfirmed_users = ['alice', 'brian', 'candace'];
+confirmed_users = [];
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+    print("Verifying user: " + current_user.title())
+    confirmed_users.append(current_user);
+for user in confirmed_users:
+    print "user is :" + user;
 
+# 7.3.2 删除包含特定值的所有列表元素
+pets  = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat'];
+while 'cat' in pets:
+    pets.remove('cat');
+print pets;
 
+# 7.3.3 使用用户输入来填充字典
+# 可使用 while 循环提示用户输入任意数量的信息。
+# responses = {};
+# flag = True;
+# while flag:
+#     name = input("what's your name");
+#     response = input("Which mountain would you like to climb someday? ")
+#     responses[name] = response;
+#     repeat = input("Would you like to let another person respond? (yes/ no)");
+#     if repeat == 'no':
+#         break;
+# for key,value in responses.items():
+#     print key + ":" + value;
 
+# 8.                  函 数
+# 8.1 定义函数
+def greatHello():
+    print 'hello world';
+greatHello();
 
+# 8.1.1 向函数传递信息
+def great(userName):
+        print userName.title() + '  hello world';
+great('zhaoyong');
 
+# 8.1.2 实参和形参
+# 8.2 传递实参
+def describe_pet(animal_type, pet_name):
+# 显示宠物的信息
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+describe_pet('hamster', 'harry')
+# 1. 调用函数多次
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 8.2.2 关键字实参
+'''关键字实参是传递给函数的名称 — 值对。你直接在实参中将名称和值关联起来了，因此向函
+数传递实参时不会混淆（不会得到名为Hamster的harry这样的结果）。关键字实参让你无需考虑函
+数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。'''
+def describe_pets(animal_type, pet_name):
+# '''显示宠物的信息'''
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+describe_pets(animal_type='longfei', pet_name='xiao xiongmao')
 
 
 
