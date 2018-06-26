@@ -560,36 +560,89 @@ def describe_pets(animal_type, pet_name):
     print("\nI have a " + animal_type + ".")
     print("My " + animal_type + "'s name is " + pet_name.title() + ".")
 describe_pets(animal_type='longfei', pet_name='xiao xiongmao')
+# 8.2.3 默认值
+'''编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用
+指定的实参值；否则，将使用形参的默认值。因此，给形参指定默认值后，可在函数调用中省略
+相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。'''
+def describe(animal_type, pet_name = "xiaogou"):
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+describe("flood");
+
+# 8.2.4 等效的函数调用
+'''鉴于可混合使用位置实参、关键字实参和默认值，通常有多种等效的函数调用方式。请看下
+面的函数 describe_pets() 的定义，其中给一个形参提供了默认值：'''
+def describe_dog(pet_name, animal_type='dog'):
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+# 下面对这个函数的所有调用都可行：
+# 一条名为Willie的小狗
+describe_dog('willie')
+describe_dog(pet_name='willie')
+
+# 一只名为Harry的仓鼠
+describe_dog('harry', 'hamster')
+describe_dog(pet_name='harry', animal_type='hamster')
+describe_dog(animal_type='hamster', pet_name='harry')
 
 
+# 8.3 返回值
+# 8.3.1 返回简单值
+def get_fullname(first_name,last_name):
+    full_name = first_name + last_name ;
+    return full_name.title();
+
+print get_fullname("zhangfei","guanyu");
+
+# 8.3.2 让实参变成可选的
+'''有时候，需要让实参变成可选的，这样使用函数的人就只需在必要时才提供额外的信息。可
+使用默认值来让实参变成可选的。'''
+def get_formatted_name(first_name, last_name, middle_name=''):
+    if middle_name:
+        full_name = first_name + ' ' + middle_name + ' ' + last_name
+    else:
+        full_name = first_name + ' ' + last_name
+        return full_name.title()
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+musician = get_formatted_name('john', 'hooker', 'lee')
+print(musician)
+
+# 8.3.3 返回字典
+'''函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。例如，下面的函数接受姓
+名的组成部分，并返回一个表示人的字典：'''
+
+def get_build_name(first_name,last_name):
+    person = {'first' : first_name,'last' : last_name}
+    return person;
+full_name = get_build_name('BMW','MRZ');
+print full_name;
 
 
+# 8.4 传递列表
+# 向函数传递列表很有用，这种列表包含的可能是名字、数字或更复杂的对
+# 象（如字典）。将列表传递给函数后，函数就能直接访问其内容。下面使用函数来提高处理列表
+# 的效率。
 
+def great_users(users):
+    for user in users:
+        print "hello " + user;
+users = ['liming','zhangsan','lisi'];
+great_users(users);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 8.5 传递任意数量的实参
+def make_pizzas(*toppings):
+    print toppings;
+make_pizzas('shaobing');
+make_pizzas('mantou','baozi','zongzi');
+# 8.5.1 结合使用位置实参和任意数量实参
+def make_pizza(size, *toppings):
+    print("\nMaking a " + str(size) +
+"-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 
 
