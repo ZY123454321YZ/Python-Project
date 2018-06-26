@@ -644,28 +644,57 @@ def make_pizza(size, *toppings):
 make_pizza(16, 'pepperoni')
 make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
+# 类
+# 9.1 创建和使用类
+class Dog():
+    def __init__(self,name,age):
+        self.name = name;
+        self.age = age;
+    def sit(self):
+        print self.name.title()+ " is sitting now " ;
+        
+# 9.1.2 根据类创建实例
+my_dog = Dog('mrs',2);
+my_dog.sit();
+# 1. 访问属性
+print my_dog.age
 
+# 3. 创建多个实例
+my_dog = Dog('willie', 6)
+your_dog = Dog('lucy', 3)
+print("My dog's name is " + my_dog.name.title() + ".")
+print("My dog is " + str(my_dog.age) + " years old.")
 
+# 9.2 使用类和实例
+# 9.2.1  Car 类
+class Car():
+# '''一次模拟汽车的简单尝试'''
+    def __init__(self, make, model, year):
+# '''初始化描述汽车的属性'''
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    def get_descriptive_name(self):
+# '''返回整洁的描述性信息'''
+        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        return long_name.title()
+    def read_odometer(self):
+        """打印一条指出汽车里程的消息"""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.get_descriptive_name())
 
+# 9.2.3 修改属性的值
+# 1. 直接修改属性的值
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 2. 通过方法修改属性的值
+# 3. 通过方法对属性的值进行递增
 
 
 
